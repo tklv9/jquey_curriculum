@@ -21,14 +21,16 @@
 </div>
 <script src="../../common/js/jquery.js"></script>
 <script>
-  $('.input').keyup(function() {
+  $('.input').on('keyup keypress', function() {
     var replace = $(this).val().replace(/\s+/g,'').length;
-    console.log($(this).val());
-    var count = $('.rest-count').text(replace);
-    if (replace >= 30) {
-      $('.rest-count').css('color', 'red');
+    var restnum = 30 - replace;
+
+    $('.rest-count').text(restnum);
+
+    if (replace > 30) {
+      $('.rest-count').addClass('red');
     } else {
-      $('.rest-count').css('color', '');
+      $('.rest-count').removeClass('red');
     }
   });
 // 今回やるのは文字数チェッカーです。
