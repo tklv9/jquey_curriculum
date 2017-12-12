@@ -45,9 +45,9 @@
 
 
   $(window).on('scroll', function() {
-    var scrlCurrent = $(window).scrollTop();
+    var scrollCurrent = $(this).scrollTop();
 
-    if (scrlCurrent >= 100) {
+    if (scrollCurrent >= 100) {
       $('.scrollTopBtn').fadeIn('');
     } else {
       $('.scrollTopBtn').fadeOut('');
@@ -67,7 +67,7 @@
       if (menuData === titleData) {
         var offset = $(this).offset().top;
 
-        $('html').animate({scrollTop: offset});
+        $('body,html').animate({scrollTop: offset});
       };
     });
   });
